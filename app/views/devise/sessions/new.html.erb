@@ -1,0 +1,32 @@
+<body class="login">
+  <div>
+    <div class="login_wrapper">
+      <div class="animate form login_form">
+        <section class="login_content">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <h1>Iniciar Sesión</h1>
+            <div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Correo", required: true %>
+            </div>
+            <div>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña", required: true %>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-default submit" href="index.html">Iniciar Sesión</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">¿Nuevo en el sitio?
+                <%= link_to 'Crear Cuenta', new_user_registration_path %>
+              </p>
+              <div class="clearfix"></div>
+              <br />
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

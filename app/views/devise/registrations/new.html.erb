@@ -1,0 +1,33 @@
+<body class="login">
+  <div>
+    <div class="login_wrapper">
+      <div>
+        <section class="login_content">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <h1>Crear Cuenta</h1>
+            <div>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Correo", required: true %>
+            </div>
+            <div>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña", required: true %>
+            </div>
+            <div>
+              <button type="submit" class="btn btn-default submit" href="index.html">Registrarse</button>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="separator">
+              <p class="change_link">¿Ya registrado?
+                <%= link_to 'Inicia sesión', new_user_session_path %>
+              </p>
+
+              <div class="clearfix"></div>
+              <br />
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>

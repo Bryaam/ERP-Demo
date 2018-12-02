@@ -1,0 +1,29 @@
+<%= form_for product, html: {class: 'form-horizontal form-label-left'} do |f| %>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Descripción</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_area :description, class: "form-control", rows: "4", required: true  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Proveedor</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.text_field :provider, class: "form-control", required: true  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Costo Unitario (S/.)</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.number_field :unit_cost, class: "form-control", step: 0.01, min: 0, required: true  %>
+    </div>
+  </div>
+  <div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-12 text-right">
+      <button type="submit" class="btn btn-success">Registrar</button>
+    </div>
+  </div>
+<% end %>

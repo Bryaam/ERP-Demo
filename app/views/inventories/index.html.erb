@@ -1,0 +1,55 @@
+<div>
+  <div class="page-title">
+    <div class="title_left">
+      <h3>Inventarios</h3>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row">
+    <div class="col-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Tabla de Inventarios</h2>
+          <ul class="nav navbar-right panel_toolbox">
+            <li>
+              <%= link_to new_inventory_path do %>
+                <i class="fa fa-plus"></i>
+                Crear
+              <% end %>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content" style="display: block;">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Cód. Producto</th>
+                <th>Descripción</th>
+                <th>Cant. Fija</th>
+                <th>Cant. Actual</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @inventories.each do |inventory| %>
+                <tr>
+                  <th scope="row"><%= inventory.product.id %></th>
+                  <td><%= inventory.product.description %></td>
+                  <td><%= inventory.security_stock %></td>
+                  <td><%= inventory.stock %></td>
+                  <td class="last">
+                    <%= link_to 'Editar', edit_inventory_path(inventory) %>
+                    <%= link_to 'Eliminar', inventory_path(inventory), method: :delete %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

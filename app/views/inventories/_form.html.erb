@@ -1,0 +1,29 @@
+<%= form_for inventory, html: {class: 'form-horizontal form-label-left'} do |f| %>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Producto</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.select :product_id, Product.all.pluck(:description, :id), {selected: inventory.try(:product).try(:id)}, class: "form-control", rows: "4", required: true  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cantidad Fija</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.number_field :security_stock, class: "form-control", min: 0, value: 50, readonly: true, required: true  %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Cantidad Actual</span>
+    </label>
+    <div class="col-md-6 col-sm-6 col-xs-12">
+      <%= f.number_field :stock, class: "form-control", min: 0, required: true  %>
+    </div>
+  </div>
+  <div class="ln_solid"></div>
+  <div class="form-group">
+    <div class="col-12 text-right">
+      <button type="submit" class="btn btn-success">Registrar</button>
+    </div>
+  </div>
+<% end %>
