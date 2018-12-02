@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: erp_demo_production
-  username: erp_demo
+  database: <%= ENV['ERP_DEMO_DATABASE_NAME'] %>
+  username: <%= ENV['ERP_DEMO_DATABASE_USERNAME'] %>
   password: <%= ENV['ERP_DEMO_DATABASE_PASSWORD'] %>
